@@ -6965,7 +6965,9 @@ public final class R {
     public static final int node_modules_reactnativevectoricons_glyphmaps_antdesign=0x7f0e0001;
     public static final int node_modules_reactnativevectoricons_glyphmaps_entypo=0x7f0e0002;
     public static final int node_modules_reactnativevectoricons_glyphmaps_feather=0x7f0e0003;
-    public static final int node_modules_reactnativevectoricons_glyphmaps_ionicons=0x7f0e0004;
+    public static final int node_modules_reactnativevectoricons_glyphmaps_fontisto=0x7f0e0004;
+    public static final int node_modules_reactnativevectoricons_glyphmaps_ionicons=0x7f0e0005;
+    public static final int node_modules_reactnativevectoricons_glyphmaps_materialicons=0x7f0e0006;
   }
   public static final class string {
     public static final int abc_action_bar_home_description=0x7f0f0000;
