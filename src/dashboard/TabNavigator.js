@@ -75,7 +75,7 @@ function MyTabBar({ state, descriptors, navigation }) {
 
 export default function TabNavigator() {
   return (
-    <Tab.Navigator tabBar={props => <MyTabBar {...props} />}>
+    <Tab.Navigator tabBar={props => <MyTabBar {...props} />} initialRouteName={'Explore'}>
       <Tab.Screen name="Profile" component={ProfileScreen} />
       <Tab.Screen name="Explore" component={ExploreScreen} />
       <Tab.Screen name="Settings" component={SettingsScreen} />

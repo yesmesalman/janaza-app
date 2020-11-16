@@ -40,30 +40,17 @@ const Explore: () => React$Node = ({navigation}) => {
             [...Array(10)].map((e, i) => {
               return(
                 <View style={Styles.exploreRow} key={i}>
-                  {
-                    i !== 4 &&
-                    <>
-                      <View style={Styles.exploreRowLeft}>
-                        <Image
-                          source={DummyImage}
-                          style={Styles.exploreRowLeftImage}
-                        />
-                      </View>
-                      <View style={Styles.exploreRowRight}>
-                        <Text style={Styles.exploreRowName}>John Doe</Text>
-                        <Text style={Styles.exploreRowTime}>10:00 PM</Text>
-                        <Text style={Styles.exploreRowAddress}>Rennes, 	Brittany</Text>
-                      </View>
-                    </>
-                  }
-                  {
-                    i === 4 &&
-                    <>
-                      <View style={Styles.containerContentCenter}>
-                        <ActivityIndicator size="large" color="#0000ff" />
-                      </View>
-                    </>
-                  }
+                  <View style={Styles.exploreRowLeft}>
+                    <Image
+                      source={DummyImage}
+                      style={Styles.exploreRowLeftImage}
+                    />
+                  </View>
+                  <View style={Styles.exploreRowRight}>
+                    <Text style={Styles.exploreRowName}>John Doe</Text>
+                    <Text style={Styles.exploreRowTime}>10:00 PM</Text>
+                    <Text style={Styles.exploreRowAddress}>Rennes, 	Brittany</Text>
+                  </View>
                 </View>
               )
             })

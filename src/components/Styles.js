@@ -154,6 +154,15 @@ const Styles = StyleSheet.create({
         fontSize: 18,
         color: appBlack
     },
+    profileRow: {
+        minHeight: 28,
+        paddingVertical: 5,
+        paddingLeft: 5,
+        width: '100%',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+    },
 });
 
 
