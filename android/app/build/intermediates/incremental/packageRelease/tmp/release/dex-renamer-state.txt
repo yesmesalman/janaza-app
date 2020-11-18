@@ -1,4 +1,4 @@
-#Sun Nov 15 23:12:23 PKT 2020
+#Thu Nov 19 01:31:30 PKT 2020
 base.0=D\:\\Projects\\janaza-app\\android\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
