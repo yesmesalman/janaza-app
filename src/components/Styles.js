@@ -2,10 +2,10 @@ import { StyleSheet, Text, Dimensions } from 'react-native';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-const appBlack = '#000';
+const appMainColor = '#081021'; //'#1fd1c4';
+const appMainColorLight = '#092355'; //'#71e1d9';
 const appWhite = '#fff';
 const appWhiteLight = '#ffffff8c';
-const appBlackLight = '#00000094';
 
 const Styles = StyleSheet.create({
     container: {
@@ -40,7 +40,7 @@ const Styles = StyleSheet.create({
         borderWidth: 1,
         width: (windowWidth/100) * 80,
         borderWidth: 0,
-        borderBottomColor: appBlack,
+        borderBottomColor: appMainColor,
         borderBottomWidth: 1,
         marginBottom: 8
     },
@@ -49,7 +49,7 @@ const Styles = StyleSheet.create({
         height: 50, 
         justifyContent: 'center', 
         alignItems: 'center',
-        backgroundColor: appBlack
+        backgroundColor: appMainColor
     },
     bottomTabActive: {
     },
@@ -66,7 +66,7 @@ const Styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: appBlack,
+        backgroundColor: appMainColor,
         borderRadius: 50
     },
     textWhite: {
@@ -102,7 +102,7 @@ const Styles = StyleSheet.create({
     },
     profileBio: {
         fontSize: 12,
-        color: appBlackLight
+        color: appMainColorLight
     },
 
     exploreRow: {
@@ -136,11 +136,11 @@ const Styles = StyleSheet.create({
     exploreRowTime: {
         fontSize: 12,
         fontWeight: 'bold',
-        color: appBlackLight
+        color: appMainColorLight
     },
     exploreRowAddress: {
         fontSize: 12,
-        color: appBlackLight
+        color: appMainColorLight
     },
     settingsRow: {
         height: 50,
@@ -152,7 +152,7 @@ const Styles = StyleSheet.create({
     },
     settingsName: {
         fontSize: 18,
-        color: appBlack
+        color: appMainColor
     },
     profileRow: {
         minHeight: 28,
@@ -168,8 +168,8 @@ const Styles = StyleSheet.create({
 
 export default Styles;
 export {
-    appBlack,
-    appBlackLight,
+    appMainColor,
+    appMainColorLight,
     appWhite,
     appWhiteLight
 }

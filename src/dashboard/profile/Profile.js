@@ -20,7 +20,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import Styles, {appBlackLight} from './../../components/Styles';
+import Styles, {appMainColorLight} from './../../components/Styles';
 import FontistoIcon from 'react-native-vector-icons/Fontisto';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
 import MaterialIconsIcon from 'react-native-vector-icons/MaterialIcons';
@@ -51,23 +51,23 @@ const Profile: () => React$Node = ({navigation}) => {
             </View>
 
             <View style={Styles.profileRow}>
-              <FontistoIcon name="person" size={15} color={appBlackLight} />
+              <FontistoIcon name="person" size={15} color={appMainColorLight} />
               <Text style={{marginLeft: 10}}> John Doe</Text>
             </View>
             <View style={Styles.profileRow}>
-              <EntypoIcon name="email" size={15} color={appBlackLight} />
+              <EntypoIcon name="email" size={15} color={appMainColorLight} />
               <Text style={{marginLeft: 10}}> johndoe@gmail.com </Text>
             </View>
             <View style={Styles.profileRow}>
-              <EntypoIcon name="home" size={15} color={appBlackLight} />
+              <EntypoIcon name="home" size={15} color={appMainColorLight} />
               <Text style={{marginLeft: 10}}> Paris, France </Text>
             </View>
             <View style={Styles.profileRow}>
-              <EntypoIcon name="key" size={15} color={appBlackLight} />
+              <EntypoIcon name="key" size={15} color={appMainColorLight} />
               <Text style={{marginLeft: 10}}> ****** </Text>
             </View>
             <View style={Styles.profileRow}>
-              <MaterialIconsIcon name="details" size={20} color={appBlackLight} />
+              <MaterialIconsIcon name="details" size={20} color={appMainColorLight} />
               <Text style={{marginLeft: 10}}> Lorem Ipsum is simply dummy text of the printing and typesetting industry. </Text>
             </View>
         </View>

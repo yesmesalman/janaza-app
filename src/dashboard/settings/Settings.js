@@ -18,7 +18,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import Styles, {appBlackLight} from './../../components/Styles';
+import Styles, {appMainColorLight} from './../../components/Styles';
 import {applyLetterSpacing} from './../../components/Global';
 import {
   TouchableHighlight,
@@ -35,19 +35,19 @@ const Settings: () => React$Node = ({navigation}) => {
         <ScrollView style={Styles.appScreenScrollView}>
           <View style={Styles.settingsRow}>
             <Text style={Styles.settingsName}>Profile Name</Text>
-            <Text><EntypoIcon name="chevron-right" size={30} color={appBlackLight} /></Text>
+            <Text><EntypoIcon name="chevron-right" size={30} color={appMainColorLight} /></Text>
           </View>
           <View style={Styles.settingsRow}>
             <Text style={Styles.settingsName}>Profile Bio</Text>
-            <Text><EntypoIcon name="chevron-right" size={30} color={appBlackLight} /></Text>
+            <Text><EntypoIcon name="chevron-right" size={30} color={appMainColorLight} /></Text>
           </View>
           <View style={Styles.settingsRow}>
             <Text style={Styles.settingsName}>Change My Location</Text>
-            <Text><EntypoIcon name="chevron-right" size={30} color={appBlackLight} /></Text>
+            <Text><EntypoIcon name="chevron-right" size={30} color={appMainColorLight} /></Text>
           </View>
           <View style={Styles.settingsRow}>
             <Text style={Styles.settingsName}>Change Password</Text>
-            <Text><EntypoIcon name="chevron-right" size={30} color={appBlackLight} /></Text>
+            <Text><EntypoIcon name="chevron-right" size={30} color={appMainColorLight} /></Text>
           </View>
           <TouchableOpacity style={Styles.settingsRow} onPress={() => { navigation.navigate('Login') }}>
             <Text style={Styles.settingsName}>Logout</Text>

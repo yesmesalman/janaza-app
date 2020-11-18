@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Text, View, TouchableOpacity} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Styles, {appBlackLight, appWhiteLight, appWhite} from './../components/Styles';
+import Styles, {appMainColorLight, appWhiteLight, appWhite} from './../components/Styles';
 import SettingsScreen from './../dashboard/settings/Settings'
 import ExploreScreen from './../dashboard/explore/Explore'
 import ProfileScreen from './../dashboard/profile/Profile'
@@ -59,6 +59,7 @@ function MyTabBar({ state, descriptors, navigation }) {
               onPress={onPress}
               onLongPress={onLongPress}
               style={[Styles.bottomTab]}
+              key={label}
             >
               { label == 'Profile' && <IoniconsIcon name="person" size={20} color={isFocused ? appWhite : appWhiteLight} /> }
               { label == 'Explore' && <FeatherIcon name="search" size={20} color={isFocused ? appWhite : appWhiteLight} /> }
