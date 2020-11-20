@@ -15,7 +15,7 @@
 11-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:4:22-64
 12
 13    <application
-13-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:6:5-25:19
+13-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:6:5-32:19
 14        android:name="com.janaza.MainApplication"
 14-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:7:7-38
 15        android:allowBackup="false"
@@ -31,31 +31,42 @@
 20        android:theme="@style/AppTheme" >
 20-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:12:7-38
 21        <activity
-21-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:13:7-23:18
-22            android:name="com.janaza.MainActivity"
-22-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:14:9-37
-23            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
-23-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:16:9-86
-24            android:label="@string/app_name"
-24-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:15:9-41
-25            android:launchMode="singleTask"
-25-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:17:9-40
-26            android:windowSoftInputMode="adjustResize" >
-26-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:18:9-51
-27            <intent-filter>
-27-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:19:9-22:25
-28                <action android:name="android.intent.action.MAIN" />
-28-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:20:13-65
-28-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:20:21-62
-29
-30                <category android:name="android.intent.category.LAUNCHER" />
-30-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:21:13-73
-30-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:21:23-70
-31            </intent-filter>
-32        </activity>
-33        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
-33-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:24:7-84
-33-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:24:17-81
-34    </application>
-35
-36</manifest>
+21-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:13:7-22:18
+22            android:name="com.janaza.SplashActivity"
+22-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:14:9-39
+23            android:label="@string/app_name"
+23-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:16:9-41
+24            android:theme="@style/SplashTheme" >
+24-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:15:9-43
+25            <intent-filter>
+25-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:18:9-21:25
+26                <action android:name="android.intent.action.MAIN" />
+26-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:19:11-63
+26-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:19:19-60
+27
+28                <category android:name="android.intent.category.LAUNCHER" />
+28-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:20:11-71
+28-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:20:21-68
+29            </intent-filter>
+30        </activity>
+31        <activity
+31-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:23:7-30:18
+32            android:name="com.janaza.MainActivity"
+32-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:24:9-37
+33            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+33-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:26:9-86
+34            android:exported="true"
+34-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:28:9-32
+35            android:label="@string/app_name"
+35-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:25:9-41
+36            android:launchMode="singleTask"
+36-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:27:9-40
+37            android:windowSoftInputMode="adjustResize" >
+37-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:29:9-51
+38        </activity>
+39        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+39-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:31:7-84
+39-->D:\Projects\janaza-app\android\app\src\main\AndroidManifest.xml:31:17-81
+40    </application>
+41
+42</manifest>

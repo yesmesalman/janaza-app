@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -25,8 +25,14 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import Navigation from './Navigation';
 import 'react-native-gesture-handler';
+import SplashScreen from 'react-native-splash-screen';
 
 const App: () => React$Node = () => {
+  
+  useEffect(() => {
+      SplashScreen.hide();
+  }, []);
+
   return (<Navigation />);
 };
 
