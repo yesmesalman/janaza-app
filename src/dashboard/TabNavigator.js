@@ -60,6 +60,7 @@ function MyTabBar({ state, descriptors, navigation }) {
               onLongPress={onLongPress}
               style={[Styles.bottomTab]}
               key={label}
+              activeOpacity={1}
             >
               { label == 'Profile' && <IoniconsIcon name="person" size={20} color={isFocused ? appWhite : appWhiteLight} /> }
               { label == 'Explore' && <FeatherIcon name="search" size={20} color={isFocused ? appWhite : appWhiteLight} /> }
@@ -77,8 +78,8 @@ function MyTabBar({ state, descriptors, navigation }) {
 export default function TabNavigator() {
   return (
     <Tab.Navigator tabBar={props => <MyTabBar {...props} />} initialRouteName={'Explore'}>
-      <Tab.Screen name="Profile" component={ProfileScreen} />
       <Tab.Screen name="Explore" component={ExploreScreen} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
       <Tab.Screen name="Settings" component={SettingsScreen} />
     </Tab.Navigator>
   );

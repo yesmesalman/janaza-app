@@ -31,28 +31,6 @@ const Settings: () => React$Node = ({navigation}) => {
     <>
       <View style={[Styles.container, Styles.appScreen]}>
         <Text style={Styles.screenTitle}>Settings</Text>
-
-        <ScrollView style={Styles.appScreenScrollView}>
-          <View style={Styles.settingsRow}>
-            <Text style={Styles.settingsName}>Profile Name</Text>
-            <Text><EntypoIcon name="chevron-right" size={30} color={appMainColorLight} /></Text>
-          </View>
-          <View style={Styles.settingsRow}>
-            <Text style={Styles.settingsName}>Profile Bio</Text>
-            <Text><EntypoIcon name="chevron-right" size={30} color={appMainColorLight} /></Text>
-          </View>
-          <View style={Styles.settingsRow}>
-            <Text style={Styles.settingsName}>Change My Location</Text>
-            <Text><EntypoIcon name="chevron-right" size={30} color={appMainColorLight} /></Text>
-          </View>
-          <View style={Styles.settingsRow}>
-            <Text style={Styles.settingsName}>Change Password</Text>
-            <Text><EntypoIcon name="chevron-right" size={30} color={appMainColorLight} /></Text>
-          </View>
-          <TouchableOpacity style={Styles.settingsRow} onPress={() => { navigation.navigate('Login') }}>
-            <Text style={Styles.settingsName}>Logout</Text>
-          </TouchableOpacity>
-        </ScrollView>
       </View>
     </>
   );

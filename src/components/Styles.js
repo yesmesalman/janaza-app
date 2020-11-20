@@ -6,11 +6,12 @@ const appMainColor = '#081021'; //'#1fd1c4';
 const appMainColorLight = '#092355'; //'#71e1d9';
 const appWhite = '#fff';
 const appWhiteLight = '#ffffff8c';
+const appBackgroundWhite = '#f8f8f8';
 
 const Styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: appWhite,
+        backgroundColor: appBackgroundWhite,
         paddingHorizontal: 15
     },
     containerContentCenter: {
@@ -58,6 +59,7 @@ const Styles = StyleSheet.create({
     },
     bottomTabTextActive: {
         color: appWhite,
+        fontWeight: 'bold'
     },
     btnFullRound: {
         width: (windowWidth/100) * 80,
@@ -71,97 +73,6 @@ const Styles = StyleSheet.create({
     },
     textWhite: {
         color: appWhite
-    },
-    profileContainer: {
-        marginTop: 15,
-        height: 100,
-        width: '100%',
-        flexDirection: 'row'
-    },
-    profileBox: {
-        height: 100,
-        width: 100,
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    profileBoxImage: {
-        height: 80,
-        width: 80,
-        borderRadius: 50
-    },
-    profileContainerRight: {
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'flex-start',
-    },
-    profileName: {
-        fontWeight: 'bold',
-        fontSize: 20
-    },
-    profileBio: {
-        fontSize: 12,
-        color: appMainColorLight
-    },
-
-    exploreRow: {
-        marginVertical: 3,
-        height: 100,
-        width: '100%',
-        flexDirection: 'row'
-    },
-    exploreRowLeft: {
-        height: 100,
-        width: 100,
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    exploreRowLeftImage: {
-        height: 80,
-        width: 80,
-        borderRadius: 50
-    },
-    exploreRowRight: {
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'flex-start',
-    },
-    exploreRowName: {
-        fontWeight: 'bold',
-        fontSize: 20
-    },
-    exploreRowTime: {
-        fontSize: 12,
-        fontWeight: 'bold',
-        color: appMainColorLight
-    },
-    exploreRowAddress: {
-        fontSize: 12,
-        color: appMainColorLight
-    },
-    settingsRow: {
-        height: 50,
-        width: '100%',
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        marginBottom: 5
-    },
-    settingsName: {
-        fontSize: 18,
-        color: appMainColor
-    },
-    profileRow: {
-        minHeight: 28,
-        paddingVertical: 5,
-        paddingLeft: 5,
-        width: '100%',
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'flex-start',
     },
 });
 
