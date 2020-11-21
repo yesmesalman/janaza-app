@@ -21,8 +21,8 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-
-import Styles, { appBackgroundWhite, appBlack, appBlackLight, appMainColor, appRed, appWhite } from './../../components/Styles';
+import Toolbar from './../../components/Toolbar'
+import Styles, { appBackgroundWhite, appBlack, appBlackLight, appMainColor, appRed, appWhite, appWhiteLight } from './../../components/Styles';
 import Global, { apiRequest, sortApiDate, convertApiTimeToAMPM, monthNames } from './../../components/Global';
 import {
   TouchableHighlight,
@@ -184,15 +184,23 @@ const Explore: () => React$Node = ({navigation}) => {
       {...props}
       renderIcon={({ route, focused, color }) => {
         if(route.key == 'france')
-          return <FontAwesome5Icon name="people-carry" size={20} color={focused ? appBlack : appBlackLight } />
+          return <FontAwesome5Icon name="people-carry" size={20} color={focused ? appWhite : appWhiteLight } />
         else
-          return <MaterialIconsIcon name="location-city" size={20} color={focused ? appBlack : appBlackLight } />
+          return <MaterialIconsIcon name="location-city" size={20} color={focused ? appWhite : appWhiteLight } />
       }}
       renderLabel={({ route, focused, color }) => (
-        <Text style={{ color: focused ? appBlack : appBlackLight }}> {route.title} </Text>
+        <Text style={{ color: focused ? appWhite : appWhiteLight }}> {route.title} </Text>
       )}
       style={{ 
-        backgroundColor: appWhite,
+        backgroundColor: appMainColor,
+      }}
+      tabStyle={{
+        borderBottomWidth: 2,
+        borderBottomColor: appWhite,
+        shadowOffset: { height: 0, width: 0 }, 
+        shadowColor: appWhite,
+        shadowOpacity: 1,
+        elevation: 0,
       }}
     />
   );
@@ -208,6 +216,12 @@ const Explore: () => React$Node = ({navigation}) => {
 
   return (
     <>
+      <Toolbar 
+        title={'Explore'}
+        addButtonFunc={() => {
+          navigation.navigate('Soumettre Janaza')
+        }}
+      />
       <TabView
         navigationState={{ index, routes }}
         renderScene={renderScene}

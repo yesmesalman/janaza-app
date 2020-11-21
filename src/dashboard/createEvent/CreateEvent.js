@@ -29,14 +29,13 @@ import {
   TouchableHighlight,
   TouchableOpacity,
 } from 'react-native-gesture-handler';
+import Toolbar from './../../components/Toolbar';
 
 const CreateEvent: () => React$Node = ({navigation}) => {
   return (
     <>
         <View style={[Styles.container]}>
-            <View style={Styles.containerScreenToolbar}>
-                <Text style={Styles.screenTitle}>Soumettre Janaza</Text>
-            </View>
+            <Toolbar title={'Soumettre Janaza'} />
         </View>
     </>
   );

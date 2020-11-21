@@ -83,7 +83,9 @@ const EventItem: () => React$Node = ({e, i, type, saveEvents}) => {
                 <TouchableWithoutFeedback onPress={async () => { await saveEvents(e.event_id, type)}}>
                     <View style={Styles.jListingRight}>
                     <AntDesignIcon name="heart" size={16} color={e.saved ? appRed : appBlack} />
-                    <Text style={[Styles.jListingRightSaveText, e.saved ? Styles.jListingRightSaveColor : {}]}>SAVE</Text>
+                    <Text style={[Styles.jListingRightSaveText, e.saved ? Styles.jListingRightSaveColor : {}]}>
+                        {e.saved ? 'SAVED' : 'SAVE'}
+                    </Text>
                     </View>
                 </TouchableWithoutFeedback>
             }

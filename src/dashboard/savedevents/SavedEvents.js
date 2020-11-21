@@ -30,6 +30,7 @@ import {
   TouchableOpacity,
 } from 'react-native-gesture-handler';
 import EventItem from './../../components/EventItem'
+import Toolbar from './../../components/Toolbar'
 
 const SavedEvents: () => React$Node = ({navigation}) => {
 
@@ -46,9 +47,7 @@ const SavedEvents: () => React$Node = ({navigation}) => {
     return (
         <>
             <View style={[Styles.container]}>
-                <View style={Styles.containerScreenToolbar}>
-                    <Text style={Styles.screenTitle}>Saved events</Text>
-                </View>
+                <Toolbar title={'Saved events'} />
 
                 <ScrollView style={[Styles.container]}>
                     {

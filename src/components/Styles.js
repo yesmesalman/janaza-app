@@ -20,13 +20,13 @@ const Styles = StyleSheet.create({
         paddingHorizontal: 15
     },
     containerScreenToolbar: {
-        height: 50,
+        height: 60,
         width: '100%',
-        // backgroundColor: 'gray',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'flex-start',
-        paddingLeft: 15
+        backgroundColor: appMainColor,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingHorizontal: 15
     },
     containerContentCenter: {
         flex: 1,
@@ -45,8 +45,16 @@ const Styles = StyleSheet.create({
     appScreen: {
         padding: 15
     },
+    toolbarRightButton: {
+        height: 60,
+        width: 60,
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        alignItems: 'center'
+    },
     screenTitle: {
-        fontSize: 40,
+        fontSize: 25,
+        color: appWhite
         // fontWeight: 'bold'
     },
     appScreenScrollView: {
@@ -112,9 +120,9 @@ const Styles = StyleSheet.create({
         marginLeft: '3%',
         marginVertical: 8,
         borderRadius: 8,
-        shadowOffset: { height: 0, width: 0 }, 
+        shadowOffset: { height: 20, width: 0 }, 
         shadowColor: appBlackLight,
-        shadowOpacity: 0.2,
+        shadowOpacity: 0.1,
         elevation: 6
     },
     jListingLeft: {
@@ -124,7 +132,7 @@ const Styles = StyleSheet.create({
         alignItems: 'center',
     },
     jListingDate: {
-        fontSize: 50,
+        fontSize: 35,
         fontWeight: 'bold',
         color: appMainColorLight
     },
@@ -164,7 +172,7 @@ const Styles = StyleSheet.create({
         color: appRed
     },
     jListingCity: {
-        fontSize: 18,
+        fontSize: 16,
         fontWeight: 'bold',
         marginBottom: 5,
         color: appMainColorLight
