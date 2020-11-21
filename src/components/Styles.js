@@ -6,20 +6,32 @@ const appMainColor = '#081021'; //'#1fd1c4';
 const appMainColorLight = '#092355'; //'#71e1d9';
 const appWhite = '#fff';
 const appWhiteLight = '#ffffff8c';
-const appBackgroundWhite = '#f8f8f8';
+const appBlack = '#000';
+const appBlackLight = '#737373';
+const appBackgroundWhite = '#f0f0f0d1'; //'#f0e9e9'; //'#f8f8f8';
+const appRed = 'red';
 
 const Styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: appBackgroundWhite,
+        backgroundColor: appWhite,
+    },
+    containerWithContentPadding: {
         paddingHorizontal: 15
     },
     containerContentCenter: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: appWhite,
         justifyContent: 'center',
         alignItems: 'center',
         paddingHorizontal: 15
+    },
+    containerContentCenterForLoading: {
+        height: windowHeight - 200,
+        width: windowWidth,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     appScreen: {
         paddingTop: 15
@@ -31,9 +43,16 @@ const Styles = StyleSheet.create({
     appScreenScrollView: {
         marginVertical: 15 
     },
+    textTiny: {
+        fontSize: 10
+    },
     appLogo: {
         fontSize: 25,
         marginBottom: 15
+    },
+    recordsNotFoundText: {
+        marginTop: 25, 
+        fontSize: 20
     },
     textField: {
         height: 40, 
@@ -74,6 +93,74 @@ const Styles = StyleSheet.create({
     textWhite: {
         color: appWhite
     },
+    jListingRow: {
+        minHeight: 100,
+        width: '94%',
+        flexDirection: 'row',
+        backgroundColor: appWhite,
+        marginLeft: '3%',
+        marginVertical: 8,
+        borderRadius: 8,
+        shadowOffset: { height: 0, width: 0 }, 
+        shadowColor: appBlackLight,
+        shadowOpacity: 0.2,
+        elevation: 6
+    },
+    jListingLeft: {
+        width: 80,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    jListingDate: {
+        fontSize: 50,
+        fontWeight: 'bold',
+        color: appMainColorLight
+    },
+    jListingMonth: {
+        fontSize: 15,
+        color: appMainColorLight
+    },
+    jListingCenter: {
+        flex: 1,
+        padding: 10,
+        flexDirection: 'column'
+    },
+    jListingCenterTop: {
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+    },
+    jListingCenterBottom: {
+        flex: 1,
+        height: 25,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'flex-end'
+    },
+    jListingRight: {
+        width: 50,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    jListingRightSaveText: {
+        marginTop: 5,
+        fontWeight: 'bold',
+        fontSize: 12
+    },
+    jListingRightSaveColor: {
+        color: appRed
+    },
+    jListingCity: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        marginBottom: 5,
+        color: appMainColorLight
+    },
+    jListingPrayer: {
+        fontSize: 14,
+    },
 });
 
 
@@ -82,5 +169,9 @@ export {
     appMainColor,
     appMainColorLight,
     appWhite,
-    appWhiteLight
+    appWhiteLight,
+    appBackgroundWhite,
+    appBlack,
+    appBlackLight,
+    appRed
 }
