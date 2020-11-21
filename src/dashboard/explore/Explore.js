@@ -34,9 +34,9 @@ import MaterialIconsIcon from 'react-native-vector-icons/MaterialIcons';
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
 import AntDesignIcon from 'react-native-vector-icons/AntDesign';
+import EventItem from './../../components/EventItem';
 
 const initialLayout = { width: Dimensions.get('window').width };
-
 
 const Explore: () => React$Node = ({navigation}) => {
 
@@ -47,8 +47,8 @@ const Explore: () => React$Node = ({navigation}) => {
 
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
-    { key: 'france', title: 'france' },
-    { key: 'province', title: 'province' },
+    { key: 'france', title: 'ille-de-france' },
+    { key: 'province', title: 'Province' },
   ]);
 
   const [franceData, setFranceData] = React.useState([]);
@@ -79,6 +79,14 @@ const Explore: () => React$Node = ({navigation}) => {
     }
     catch(err) {
       loadingCallback(false)
+
+      //get events in local storage
+      if(category_id === CATEGORY_ID.france){
+        callback(Global.franceEvents)
+      }else{
+        callback(Global.provinceEvents)
+      }
+
       console.log(err)
     }
   }
@@ -128,53 +136,7 @@ const Explore: () => React$Node = ({navigation}) => {
             
             {
               franceData.map((e, i) => {
-                return(
-                  <View key={i} style={[Styles.jListingRow, (i == 0) ? {marginTop: 16} : {}]}>
-                    <View style={Styles.jListingLeft}>
-                      <Text style={Styles.jListingDate}>{e.event_start_date.split('-')[2]}</Text>
-                      <Text style={Styles.jListingMonth}>{monthNames[e.event_start_date.split('-')[1]]}</Text>
-                    </View>
-                    <View style={Styles.jListingCenter}>
-                      <View style={Styles.jListingCenterTop}>
-                        <Text style={Styles.jListingCity}>SALAT JANAZA - {e.location_city}</Text>
-                        <Text>
-                          <EntypoIcon name="address" size={16} />
-                          {' '+e.location_address1}
-                        </Text>
-                        {
-                          e.meta && e.meta.prayer &&
-                          <Text style={Styles.jListingPrayer}>
-                            <FontAwesome5Icon name="pray" size={16} />
-                            {' '+e.meta.prayer}
-                          </Text>
-                        }
-                        {
-                          e.meta && e.meta.gender &&
-                          <Text style={Styles.jListingPrayer}>
-                            <IoniconsIcon name="person" size={16} />
-                            <Text>{' '+ e.meta.gender}</Text>
-                          </Text>
-                        }
-                      </View>
-                      <View style={Styles.jListingCenterBottom}>
-                        {
-                          e.event_start_time &&
-                          <Text style={Styles.textTiny}>{convertApiTimeToAMPM(e.event_start_time)}</Text>
-                        }
-                        {
-                          e.event_start_date &&
-                          <Text style={Styles.textTiny}>{sortApiDate(e.event_start_date)}</Text>
-                        }
-                      </View>
-                    </View>
-                    <TouchableWithoutFeedback onPress={async () => { await saveEvents(e.event_id, 'france')}}>
-                      <View style={Styles.jListingRight}>
-                        <AntDesignIcon name="heart" size={16} color={e.saved ? appRed : appBlack} />
-                        <Text style={[Styles.jListingRightSaveText, e.saved ? Styles.jListingRightSaveColor : {}]}>SAVE</Text>
-                      </View>
-                    </TouchableWithoutFeedback>
-                  </View>
-                )
+                return( <EventItem e={e} i={i} saveEvents={saveEvents} type='france' key={i} /> )
               })
             }
           </>
@@ -203,53 +165,7 @@ const Explore: () => React$Node = ({navigation}) => {
             }
             {
               provinceData.map((e, i) => {
-                return(
-                  <View key={i} style={[Styles.jListingRow, (i == 0) ? {marginTop: 16} : {}]}>
-                    <View style={Styles.jListingLeft}>
-                      <Text style={Styles.jListingDate}>{e.event_start_date.split('-')[2]}</Text>
-                      <Text style={Styles.jListingMonth}>{monthNames[e.event_start_date.split('-')[1]]}</Text>
-                    </View>
-                    <View style={Styles.jListingCenter}>
-                      <View style={Styles.jListingCenterTop}>
-                        <Text style={Styles.jListingCity}>SALAT JANAZA - {e.location_city}</Text>
-                        <Text>
-                          <EntypoIcon name="address" size={16} />
-                          {' '+e.location_address1}
-                        </Text>
-                        {
-                          e.meta && e.meta.prayer &&
-                          <Text style={Styles.jListingPrayer}>
-                            <FontAwesome5Icon name="pray" size={16} />
-                            {' '+e.meta.prayer}
-                          </Text>
-                        }
-                        {
-                          e.meta && e.meta.gender &&
-                          <Text style={Styles.jListingPrayer}>
-                            <IoniconsIcon name="person" size={16} />
-                            <Text>{' '+ e.meta.gender}</Text>
-                          </Text>
-                        }
-                      </View>
-                      <View style={Styles.jListingCenterBottom}>
-                        {
-                          e.event_start_time &&
-                          <Text style={Styles.textTiny}>{convertApiTimeToAMPM(e.event_start_time)}</Text>
-                        }
-                        {
-                          e.event_start_date &&
-                          <Text style={Styles.textTiny}>{sortApiDate(e.event_start_date)}</Text>
-                        }
-                      </View>
-                    </View>
-                    <TouchableWithoutFeedback onPress={async () => { await saveEvents(e.event_id, 'province')}}>
-                      <View style={Styles.jListingRight}>
-                        <AntDesignIcon name="heart" size={16} color={saved ? appRed : appBlack}/>
-                        <Text style={[Styles.jListingRightSaveText, saved ? Styles.jListingRightSaveColor : {}]}>SAVE</Text>
-                      </View>
-                    </TouchableWithoutFeedback>
-                  </View>
-                )
+                return( <EventItem e={e} i={i} saveEvents={saveEvents} type='province' key={i} /> )
               })
             }
           </>

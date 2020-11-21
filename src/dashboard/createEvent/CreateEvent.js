@@ -20,24 +20,26 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import Styles, {appMainColorLight} from './../../components/Styles';
+import Styles, {appMainColorLight} from '../../components/Styles';
 import FontistoIcon from 'react-native-vector-icons/Fontisto';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
 import MaterialIconsIcon from 'react-native-vector-icons/MaterialIcons';
-import {applyLetterSpacing} from './../../components/Global';
+import {applyLetterSpacing} from '../../components/Global';
 import {
   TouchableHighlight,
   TouchableOpacity,
 } from 'react-native-gesture-handler';
 
-const Profile: () => React$Node = ({navigation}) => {
+const CreateEvent: () => React$Node = ({navigation}) => {
   return (
     <>
-      <View style={[Styles.container, Styles.appScreen]}>
-        <Text style={Styles.screenTitle}>Profile</Text>
-      </View>
+        <View style={[Styles.container]}>
+            <View style={Styles.containerScreenToolbar}>
+                <Text style={Styles.screenTitle}>Soumettre Janaza</Text>
+            </View>
+        </View>
     </>
   );
 };
 
-export default Profile;
+export default CreateEvent;

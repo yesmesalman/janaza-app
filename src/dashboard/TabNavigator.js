@@ -3,12 +3,12 @@ import { Text, View, TouchableOpacity} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Styles, {appMainColorLight, appWhiteLight, appWhite} from './../components/Styles';
-import SettingsScreen from './../dashboard/settings/Settings'
 import ExploreScreen from './../dashboard/explore/Explore'
-import ProfileScreen from './../dashboard/profile/Profile'
+import SavedEventsScreen from './../dashboard/savedevents/SavedEvents'
+import CreateEventScreen from './createEvent/CreateEvent'
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
-import AntDesignIcon from 'react-native-vector-icons/AntDesign';
+import MaterialIconsIcon from 'react-native-vector-icons/MaterialIcons';
 const Tab = createBottomTabNavigator();
 
 function MyTabBar({ state, descriptors, navigation }) {
@@ -62,9 +62,9 @@ function MyTabBar({ state, descriptors, navigation }) {
               key={label}
               activeOpacity={1}
             >
-              { label == 'Profile' && <IoniconsIcon name="person" size={20} color={isFocused ? appWhite : appWhiteLight} /> }
+              { label == 'Saved Events' && <MaterialIconsIcon name="event" size={20} color={isFocused ? appWhite : appWhiteLight} /> }
               { label == 'Explore' && <FeatherIcon name="search" size={20} color={isFocused ? appWhite : appWhiteLight} /> }
-              { label == 'Settings' && <AntDesignIcon name="setting" size={20} color={isFocused ? appWhite : appWhiteLight} /> }
+              { label == 'Soumettre Janaza' && <IoniconsIcon name="create-outline" size={20} color={isFocused ? appWhite : appWhiteLight} /> }
               <Text style={[isFocused ? Styles.bottomTabTextActive : Styles.bottomTabText]}>
                 { label }
               </Text>
@@ -78,9 +78,9 @@ function MyTabBar({ state, descriptors, navigation }) {
 export default function TabNavigator() {
   return (
     <Tab.Navigator tabBar={props => <MyTabBar {...props} />} initialRouteName={'Explore'}>
+      <Tab.Screen name="Saved Events" component={SavedEventsScreen} />
       <Tab.Screen name="Explore" component={ExploreScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
+      <Tab.Screen name="Soumettre Janaza" component={CreateEventScreen} />
     </Tab.Navigator>
   );
 }

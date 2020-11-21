@@ -19,6 +19,15 @@ const Styles = StyleSheet.create({
     containerWithContentPadding: {
         paddingHorizontal: 15
     },
+    containerScreenToolbar: {
+        height: 50,
+        width: '100%',
+        // backgroundColor: 'gray',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+        paddingLeft: 15
+    },
     containerContentCenter: {
         flex: 1,
         backgroundColor: appWhite,
@@ -34,11 +43,11 @@ const Styles = StyleSheet.create({
         alignItems: 'center'
     },
     appScreen: {
-        paddingTop: 15
+        padding: 15
     },
     screenTitle: {
-        fontSize: 30,
-        fontWeight: 'bold'
+        fontSize: 40,
+        // fontWeight: 'bold'
     },
     appScreenScrollView: {
         marginVertical: 15 
@@ -74,11 +83,13 @@ const Styles = StyleSheet.create({
     bottomTabActive: {
     },
     bottomTabText: {
-        color: appWhiteLight
+        color: appWhiteLight,
+        fontSize: 12
     },
     bottomTabTextActive: {
         color: appWhite,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        fontSize: 12
     },
     btnFullRound: {
         width: (windowWidth/100) * 80,

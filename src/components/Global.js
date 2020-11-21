@@ -35,9 +35,19 @@ export default class Global {
 
   static init = async () => {
     try {
-      let config = await AsyncStorage.getItem('savedEvents');
-      if (config != null) {
-        Global.savedEvents = JSON.parse(config);
+      let e = await AsyncStorage.getItem('savedEvents');
+      if (e != null) {
+        Global.savedEvents = JSON.parse(e);
+      }
+
+      let r = await AsyncStorage.getItem('franceEvents');
+      if (r != null) {
+        Global.franceEvents = JSON.parse(r);
+      }
+
+      let t = await AsyncStorage.getItem('provinceEvents');
+      if (t != null) {
+        Global.provinceEvents = JSON.parse(t);
       }
 
     } catch (error) {
@@ -63,8 +73,9 @@ export default class Global {
   static saveEventsInStorage = async () => {
     try {
       await AsyncStorage.setItem('savedEvents', JSON.stringify(Global.savedEvents));
-      await AsyncStorage.setItem('franceEvents', JSON.stringify(Global.savedEvents));
-      await AsyncStorage.setItem('provinceEvents', JSON.stringify(Global.savedEvents));
+      await AsyncStorage.setItem('franceEvents', JSON.stringify(Global.franceEvents));
+      await AsyncStorage.setItem('provinceEvents', JSON.stringify(Global.provinceEvents));
+
     } catch (error) {
       console.log(error);
     }
