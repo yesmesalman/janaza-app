@@ -132,7 +132,7 @@ const Styles = StyleSheet.create({
         alignItems: 'center',
     },
     jListingDate: {
-        fontSize: 35,
+        fontSize: 38,
         fontWeight: 'bold',
         color: appMainColorLight
     },
@@ -143,6 +143,7 @@ const Styles = StyleSheet.create({
     jListingCenter: {
         flex: 1,
         padding: 10,
+        paddingBottom: 5,
         flexDirection: 'column'
     },
     jListingCenterTop: {

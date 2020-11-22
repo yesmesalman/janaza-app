@@ -26,12 +26,14 @@ const convertApiTimeToAMPM = (timeString) => {
   return timeString
 }
 
-const monthNames = ["", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const monthNames = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 export default class Global {
   static savedEvents = [];
   static franceEvents = [];
   static provinceEvents = [];
+
+  // static API_DATA_TIMER = 0;
 
   static init = async () => {
     try {
@@ -53,7 +55,6 @@ export default class Global {
     } catch (error) {
         console.log(error);
     }
-   console.log("Init") 
   }
 
   static toggleSaveEvents = async (eventId) => {
@@ -80,6 +81,22 @@ export default class Global {
       console.log(error);
     }
   }
+
+  static limitString = (str, limit) => {
+    if(str.length <= limit){
+      return str;
+    }
+    return str.substring(0, limit)+'...';
+  }
+
+  // static restartTimer = () => {
+  //   var interval = setInterval(() => {
+  //     if(Global.API_DATA_TIMER === 3){
+  //       clearInterval(interval)
+  //     }
+  //     Global.API_DATA_TIMER++
+  //   }, 1000);
+  // }
 }
 
 export {

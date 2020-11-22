@@ -48,23 +48,23 @@ const EventItem: () => React$Node = ({e, i, type, saveEvents, screenType, remove
             <View style={Styles.jListingCenter}>
                 <View style={Styles.jListingCenterTop}>
                 <Text style={Styles.jListingCity}>SALAT JANAZA - {e.location_city}</Text>
-                <Text>
-                    <EntypoIcon name="address" size={16} />
-                    {' '+e.location_address1}
-                </Text>
+                <View style={{ flexDirection: 'row', marginBottom: 3 }}>
+                    <EntypoIcon name="address" size={14} />
+                    <Text style={{marginLeft: 3}}>{Global.limitString(e.location_address1, 25)}</Text>
+                </View>
                 {
                     e.meta && e.meta.prayer &&
-                    <Text style={Styles.jListingPrayer}>
-                    <FontAwesome5Icon name="pray" size={16} />
-                    {' '+e.meta.prayer}
-                    </Text>
+                    <View style={{ flexDirection: 'row', marginBottom: 3 }}>
+                        <FontAwesome5Icon name="pray" size={14} />
+                        <Text style={{marginLeft: 7}}>{e.meta.prayer}</Text>
+                    </View>
                 }
                 {
                     e.meta && e.meta.gender &&
-                    <Text style={Styles.jListingPrayer}>
-                    <IoniconsIcon name="person" size={16} />
-                    <Text>{' '+ e.meta.gender}</Text>
-                    </Text>
+                    <View style={{ flexDirection: 'row', marginBottom: 3 }}>
+                        <IoniconsIcon name="person" size={14} />
+                        <Text style={{marginLeft: 3}}>{e.meta.gender}</Text>
+                    </View>
                 }
                 </View>
                 <View style={Styles.jListingCenterBottom}>
