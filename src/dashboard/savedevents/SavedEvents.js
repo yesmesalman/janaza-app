@@ -44,10 +44,34 @@ const SavedEvents: () => React$Node = ({navigation}) => {
         getSavedEvents()
     });
 
+    const removeEvents = async (event_id) => {
+        
+        let index = events.findIndex(e => e.event_id === event_id)
+        let newArr = [...events]
+        newArr[index].saved = false
+        setEvents(newArr)
+
+        await Global.toggleSaveEvents(event_id)
+
+        let gIndex = Global.franceEvents.findIndex(e => e.event_id === event_id)
+        if(gIndex === -1){
+            gIndex = Global.provinceEvents.findIndex(e => e.event_id === event_id)
+            let gnewArr = [...Global.provinceEvents]
+            gnewArr[gIndex].saved = false
+            Global.provinceEvents = gnewArr
+            await Global.saveEventsInStorage()
+        }else{
+            let gnewArr = [...Global.franceEvents]
+            gnewArr[gIndex].saved = false
+            Global.franceEvents = gnewArr
+            await Global.saveEventsInStorage()
+        }
+    }
+
     return (
         <>
             <View style={[Styles.container]}>
-                <Toolbar title={'Saved events'} />
+                <Toolbar title={'Saved Events'} />
 
                 <ScrollView style={[Styles.container]}>
                     {
@@ -59,7 +83,7 @@ const SavedEvents: () => React$Node = ({navigation}) => {
                     {
                         events.map((e, i) => {
                             if(e.saved == false) return;
-                            return( <EventItem e={e} i={i} saveEvents={() => {}} key={i} /> )
+                            return( <EventItem e={e} i={i} removeEvents={removeEvents} key={i} screenType={'saved'} /> )
                         })
                     }
                 </ScrollView>

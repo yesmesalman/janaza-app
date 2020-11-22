@@ -62,9 +62,9 @@ function MyTabBar({ state, descriptors, navigation }) {
               key={label}
               activeOpacity={1}
             >
-              { label == 'Saved Events' && <MaterialIconsIcon name="event" size={20} color={isFocused ? appWhite : appWhiteLight} /> }
-              { label == 'Explore' && <FeatherIcon name="search" size={20} color={isFocused ? appWhite : appWhiteLight} /> }
-              { label == 'Soumettre Janaza' && <IoniconsIcon name="create-outline" size={20} color={isFocused ? appWhite : appWhiteLight} /> }
+              { label == 'Saved Events' && <MaterialIconsIcon name="event" size={18} color={isFocused ? appWhite : appWhiteLight} /> }
+              { label == 'Explore' && <FeatherIcon name="search" size={18} color={isFocused ? appWhite : appWhiteLight} /> }
+              { label == 'Soumettre Janaza' && <IoniconsIcon name="create-outline" size={18} color={isFocused ? appWhite : appWhiteLight} /> }
               <Text style={[isFocused ? Styles.bottomTabTextActive : Styles.bottomTabText]}>
                 { label }
               </Text>

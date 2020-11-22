@@ -25,7 +25,7 @@ const Toolbar: () => React$Node = ({title, addButtonFunc}) => {
             {
                 (title == 'Explore') &&
                 <TouchableOpacity style={Styles.toolbarRightButton} onPress={addButtonFunc}>
-                    <EntypoIcon name="plus" size={34} color={appWhite} />
+                    <EntypoIcon name="plus" size={28} color={appWhite} />
                 </TouchableOpacity>
             }
         </View>

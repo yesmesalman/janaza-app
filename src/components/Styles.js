@@ -2,7 +2,7 @@ import { StyleSheet, Text, Dimensions } from 'react-native';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-const appMainColor = '#081021'; //'#1fd1c4';
+const appMainColor = '#0e275d'; //'#081021'; //'#1fd1c4';
 const appMainColorLight = '#092355'; //'#71e1d9';
 const appWhite = '#fff';
 const appWhiteLight = '#ffffff8c';
@@ -53,7 +53,7 @@ const Styles = StyleSheet.create({
         alignItems: 'center'
     },
     screenTitle: {
-        fontSize: 25,
+        fontSize: 23,
         color: appWhite
         // fontWeight: 'bold'
     },
@@ -113,7 +113,7 @@ const Styles = StyleSheet.create({
         color: appWhite
     },
     jListingRow: {
-        minHeight: 100,
+        minHeight: 90,
         width: '94%',
         flexDirection: 'row',
         backgroundColor: appWhite,
@@ -126,7 +126,7 @@ const Styles = StyleSheet.create({
         elevation: 6
     },
     jListingLeft: {
-        width: 80,
+        width: 65,
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
@@ -172,7 +172,7 @@ const Styles = StyleSheet.create({
         color: appRed
     },
     jListingCity: {
-        fontSize: 16,
+        fontSize: 15,
         fontWeight: 'bold',
         marginBottom: 5,
         color: appMainColorLight

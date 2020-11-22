@@ -92,8 +92,12 @@ const Explore: () => React$Node = ({navigation}) => {
   }
 
   React.useEffect(() => {
-    fetchData(CATEGORY_ID.france, setFranceData, setFranceLoading)
-  }, [])
+    const unsubscribe = navigation.addListener('focus', () => {
+      fetchData(CATEGORY_ID.france, setFranceData, setFranceLoading)
+    });
+
+    return unsubscribe;
+  }, [navigation]);
 
   const saveEvents = async (event_id, type) => {
     let res = await Global.toggleSaveEvents(event_id)
@@ -184,9 +188,9 @@ const Explore: () => React$Node = ({navigation}) => {
       {...props}
       renderIcon={({ route, focused, color }) => {
         if(route.key == 'france')
-          return <FontAwesome5Icon name="people-carry" size={20} color={focused ? appWhite : appWhiteLight } />
+          return <FontAwesome5Icon name="people-carry" size={18} color={focused ? appWhite : appWhiteLight } />
         else
-          return <MaterialIconsIcon name="location-city" size={20} color={focused ? appWhite : appWhiteLight } />
+          return <MaterialIconsIcon name="location-city" size={18} color={focused ? appWhite : appWhiteLight } />
       }}
       renderLabel={({ route, focused, color }) => (
         <Text style={{ color: focused ? appWhite : appWhiteLight }}> {route.title} </Text>

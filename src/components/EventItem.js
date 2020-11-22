@@ -38,7 +38,7 @@ import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 const initialLayout = { width: Dimensions.get('window').width };
 
 
-const EventItem: () => React$Node = ({e, i, type, saveEvents}) => {
+const EventItem: () => React$Node = ({e, i, type, saveEvents, screenType, removeEvents}) => {
     return(
         <View key={i} style={[Styles.jListingRow, (i == 0) ? {marginTop: 16} : {}]}>
             <View style={Styles.jListingLeft}>
@@ -85,6 +85,17 @@ const EventItem: () => React$Node = ({e, i, type, saveEvents}) => {
                     <AntDesignIcon name="heart" size={16} color={e.saved ? appRed : appBlack} />
                     <Text style={[Styles.jListingRightSaveText, e.saved ? Styles.jListingRightSaveColor : {}]}>
                         {e.saved ? 'SAVED' : 'SAVE'}
+                    </Text>
+                    </View>
+                </TouchableWithoutFeedback>
+            }
+            {
+                screenType === 'saved' &&
+                <TouchableWithoutFeedback onPress={async () => { await removeEvents(e.event_id)}}>
+                    <View style={Styles.jListingRight}>
+                    <AntDesignIcon name="close" size={20} color={e.saved ? appRed : appBlack} />
+                    <Text style={[Styles.jListingRightSaveText, e.saved ? Styles.jListingRightSaveColor : {}]}>
+                        REMOVE
                     </Text>
                     </View>
                 </TouchableWithoutFeedback>
